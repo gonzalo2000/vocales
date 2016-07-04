@@ -30,3 +30,27 @@ $("#audioButtonE").on("click", function() {
     return audio.play();
   });
 });
+
+jQuery(document).ready(function() {
+$("#audioButtonI").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});
+
+jQuery(document).ready(function() {
+$("#audioButtonO").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});
+
+jQuery(document).ready(function() {
+$("#audioButtonU").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});
