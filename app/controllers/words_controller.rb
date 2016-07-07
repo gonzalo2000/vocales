@@ -1,7 +1,5 @@
 class WordsController < ApplicationController
   def index
-    # this needs its own view for a random word
-    # @word = Word.order("RANDOM()").first
     @words = Word.all
   end
 

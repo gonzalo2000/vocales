@@ -23,4 +23,8 @@ class VowelWordsController < ApplicationController
     all_u_words = Word.all.select {|word| word if word.term[0] == "u"}
     @random_u = all_u_words.shuffle.first
   end
+
+  def random_word
+    @word = Word.order("RANDOM()").first
+  end
 end

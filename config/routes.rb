@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'i',        to: 'vowel_words#i_words'
   get 'o',        to: 'vowel_words#o_words'
   get 'u',        to: 'vowel_words#u_words'
+  get 'azar',     to: 'vowel_words#random_word'
   resources :words
 
 end
