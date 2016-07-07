@@ -1,3 +1,11 @@
-<h1>Una palabra al azar</h1>
+<h1>Todas las palabras</h1>
 
-<%= @word.term %>
+<ul>
+<% @words.each do |word| %>
+  <li><%= word.term%></li>
+<% end %>
+</ul>
+  
+
+
+
