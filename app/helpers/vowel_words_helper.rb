@@ -1,0 +1,2 @@
+module VowelWordsHelper
+end

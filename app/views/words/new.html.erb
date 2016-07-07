@@ -1,0 +1,6 @@
+<h1>Nueva Palabra</h1>
+
+<%= simple_form_for @word do |f| %>
+  <%= f.input :term %><br>
+  <%= f.submit 'Crear', class: "btn btn-primary" %>
+<% end %>
