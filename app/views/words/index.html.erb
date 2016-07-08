@@ -5,7 +5,10 @@
   <% @words.each do |word| %>
     <li>
       <%= word.term %> &nbsp
-      <%= link_to 'Editar', edit_word_path(word) %>
+      <%= link_to 'Editar', edit_word_path(word) %> &nbsp
+      <%= link_to 'Delete', word_path(word), 
+          method: :delete, 
+          data: { confirm: 'Are you sure you want to delete this word? '} %>
     </li><br>
   <% end %>
   </ul>
