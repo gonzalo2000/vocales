@@ -7,6 +7,10 @@ class WordsController < ApplicationController
     @word = Word.new
   end
 
+  def edit
+    @word = Word.find(params[:id])
+  end
+
   def create
     @word = Word.new(word_params)
 
@@ -14,6 +18,16 @@ class WordsController < ApplicationController
       redirect_to words_path
     else
       render 'new'
+    end
+  end
+
+  def update
+    @word = Word.find(params[:id])
+
+    if @word.update(word_params)
+      redirect_to words_path
+    else
+      render 'edit'
     end
   end
 
