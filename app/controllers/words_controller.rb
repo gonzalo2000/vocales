@@ -8,8 +8,13 @@ class WordsController < ApplicationController
   end
 
   def create
-    Word.create(word_params)
-    redirect_to words_path
+    @word = Word.new(word_params)
+
+    if @word.save 
+      redirect_to words_path
+    else
+      render 'new'
+    end
   end
 
   private
