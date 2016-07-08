@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
-
-  before_action :authenticate_user!, except: [:index]
+  # before_action :authenticate_user!, except: [:index]
+  before_action :confirm_admin_status, except: [:index, :show]
 
   def index
     @words = Word.all
@@ -45,5 +45,11 @@ class WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit(:term)
+  end
+
+  def confirm_admin_status
+    if !current_user.try(:admin?)
+      redirect_to words_path, alert: 'You need to have Admin status to edit the words!'
+    end
   end
 end

@@ -5,16 +5,20 @@
   <% @words.each do |word| %>
     <li>
       <%= word.term %> &nbsp
-      <%= link_to 'Editar', edit_word_path(word) %> &nbsp
-      <%= link_to 'Delete', word_path(word), 
-          method: :delete, 
-          data: { confirm: 'Are you sure you want to delete this word? '} %>
+      <% if current_user.try(:admin?) %>
+        <%= link_to 'Editar', edit_word_path(word) %> &nbsp
+        <%= link_to 'Delete', word_path(word), 
+            method: :delete, 
+            data: { confirm: 'Are you sure you want to delete this word? '} %>
+      <% end %>
     </li><br>
   <% end %>
   </ul>
 
-  <%= link_to "Agregar Palabra", new_word_path %><br><br>
-
+  <% if current_user.try(:admin?) %>
+    <%= link_to "Agregar Palabra", new_word_path %><br><br>
+  <% end %>
+  
   <%= link_to "Home", root_path %><br>
 
 </div>
