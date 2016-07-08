@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'static_pages#welcome'
   get '/vocales', to: 'static_pages#vocales'
   get 'a',        to: 'vowel_words#a_words'
