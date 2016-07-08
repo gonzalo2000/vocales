@@ -2,8 +2,8 @@
   <h1>Editar Palabra</h1>
 
   <%= simple_form_for @word, url: word_path(@word), method: :patch do |f| %>
-    <%= f.input :term %><br>
-    <%= f.submit 'Crear', class: "btn btn-primary" %>
+    <%= f.input :term, label: "Palabra" %><br>
+    <%= f.submit 'Editar', class: "btn btn-primary" %>
   <% end %>
 
   <br><br>

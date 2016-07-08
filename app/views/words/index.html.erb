@@ -3,12 +3,16 @@
 
   <ul>
   <% @words.each do |word| %>
-    <li><%= word.term%></li>
+    <li>
+      <%= word.term %> &nbsp
+      <%= link_to 'Editar', edit_word_path(word) %>
+    </li><br>
   <% end %>
   </ul>
 
+  <%= link_to "Agregar Palabra", new_word_path %><br><br>
+
   <%= link_to "Home", root_path %><br>
-  <%= link_to "Agregar Palabra", new_word_path %>
 
 </div>
 
