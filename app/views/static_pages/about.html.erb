@@ -8,5 +8,13 @@
 
   <br><br>
 
-  <%= link_to 'Admin', new_user_session_path %>
+  <div class="text-center">
+    <%= link_to root_path do %>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    <% end %>
+  </div>
+
+  <br><br>
+
+  <%= link_to 'Admin', new_user_session_path, class: 'pull-right' %>
 </div>

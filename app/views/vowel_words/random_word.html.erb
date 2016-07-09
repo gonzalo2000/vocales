@@ -2,11 +2,11 @@
   <div class="text-center">
     <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 
-    <br><br>
+    <br><br><br>
 
-    <%= @word.term %>
+    <mark><%= @word.term %></mark>
 
-    <br><br>
+    <br><br><br>
 
     <!-- button display logic -->
     <%= audio_tag "error.mp3", class: "audio-play" %>
@@ -16,11 +16,15 @@
       <button type="button" class="btn btn-success btn-lg audio-button">A</button>
     <% end %>
 
+    &nbsp
+
     <% if @word.term[0] == "e" || @word.term[0] == "é" %>
       <%= link_to 'E', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">E</button>
     <% end %>
+
+    &nbsp
 
     <% if @word.term[0] == "i" || @word.term[0] == "í" %>
       <%= link_to 'I', azar_path, class: 'btn btn-success btn-lg' %>
@@ -28,11 +32,15 @@
       <button type="button" class="btn btn-success btn-lg audio-button">I</button>
     <% end %>
 
+    &nbsp
+
     <% if @word.term[0] == "o" || @word.term[0] == "ó" %>
       <%= link_to 'O', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">O</button>
     <% end %>
+
+    &nbsp
 
     <% if @word.term[0] == "u" || @word.term[0] == "ú" %>
       <%= link_to 'U', azar_path, class: 'btn btn-success btn-lg' %>
@@ -40,5 +48,11 @@
       <button type="button" class="btn btn-success btn-lg audio-button">U</button>
     <% end %>
     <!-- button end logic -->
+
+    <br><br><br><br><br>
+
+    <%= link_to root_path do %>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    <% end %>
   </div>
 </div>
