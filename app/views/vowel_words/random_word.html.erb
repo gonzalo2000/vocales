@@ -1,44 +1,41 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1>Al Azar</h1>
+  <h1>???</h1>
 
   <%= @word.term %>
 
   <br><br>
 
   <!-- button display logic -->
+  <%= audio_tag "error.mp3", class: "audio-play" %>
   <% if @word.term[0] == "a" %>
-    <p>The above word starts with A</p>
+    <%= link_to 'A', azar_path, class: 'btn btn-success btn-lg' %>
   <% else %>
-    <p>The above word doesn't start with A</p>
+    <button type="button" class="btn btn-success btn-lg audio-button">A</button>
   <% end %>
 
   <% if @word.term[0] == "e" || @word.term[0] == "é" %>
-    <p>The above word starts with E</p>
+    <%= link_to 'E', azar_path, class: 'btn btn-success btn-lg' %>
   <% else %>
-    <p>The above word doesn't start with E</p>
+    <button type="button" class="btn btn-success btn-lg audio-button">E</button>
   <% end %>
 
   <% if @word.term[0] == "i" || @word.term[0] == "í" %>
-    <p>The above word starts with I</p>
+    <%= link_to 'I', azar_path, class: 'btn btn-success btn-lg' %>
   <% else %>
-    <p>The above word doesn't start with I</p>
+    <button type="button" class="btn btn-success btn-lg audio-button">I</button>
   <% end %>
 
   <% if @word.term[0] == "o" || @word.term[0] == "ó" %>
-    <p>The above word starts with O</p>
+    <%= link_to 'O', azar_path, class: 'btn btn-success btn-lg' %>
   <% else %>
-    <p>The above word doesn't start with O</p>
+    <button type="button" class="btn btn-success btn-lg audio-button">O</button>
   <% end %>
 
   <% if @word.term[0] == "u" || @word.term[0] == "ú" %>
-    <p>The above word starts with U</p>
+    <%= link_to 'U', azar_path, class: 'btn btn-success btn-lg' %>
   <% else %>
-    <p>The above word doesn't start with U</p>
+    <button type="button" class="btn btn-success btn-lg audio-button">U</button>
   <% end %>
+  <!-- button end logic -->
 
-
-
-  <br>
-
-  <%= link_to 'Otra', azar_path, class: 'btn btn-primary' %>
 </div>

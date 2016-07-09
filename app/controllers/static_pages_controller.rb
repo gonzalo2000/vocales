@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def vocales
   end
+
+  def about
+  end
 end

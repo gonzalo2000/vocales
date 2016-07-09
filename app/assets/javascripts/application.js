@@ -53,3 +53,10 @@ $("#audioButtonU").on("click", function() {
     return audio.play();
   });
 });
+
+jQuery(document).ready(function() {
+$(".audio-button").on("click", function() {
+    $(".audio-play")[0].currentTime = 0;
+    return $(".audio-play")[0].play();
+  });
+});
