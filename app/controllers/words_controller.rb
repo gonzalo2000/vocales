@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   before_action :confirm_admin_status, except: [:index, :show]
 
   def index
-    @words = Word.all
+    @words = Word.order('term')
   end
 
   def new
