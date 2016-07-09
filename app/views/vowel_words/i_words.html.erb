@@ -1,11 +1,21 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1>PALABRAS CON I</h1>
+  <div class="text-center">
+    <span class="a-circle">I</span>
 
-  <%= @random_i.term %>
+    <br><br><br>
 
-  <br><br><br>
-  
-  <%= link_to root_path do %>
-    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-  <% end %>
+    <mark><%= @random_i.term %></mark>
+
+    <br><br><br>
+
+    <%= link_to i_path do %>
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% end %>
+
+    <br><br><br><br>
+
+    <%= link_to root_path do %>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    <% end %>
+  </div>
 </div>
