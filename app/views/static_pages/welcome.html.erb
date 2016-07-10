@@ -1,16 +1,56 @@
 
-<div class="booyah-box col-xs-10 col-xs-offset-1">
-  <h1>Las Vocales</h1>
-
+<div class="booyah-box col-xs-10 col-xs-offset-1 text-center">
+  <h1>LAS VOCALES</h1>
   <br>
-  
-  <%= link_to 'Escucha las vocales', vocales_path %><br><br>
+  <p><i>Un primer paso para leer en español</i></p>
 
-  <%= link_to 'Palabras con A', a_path %><br>
-  <%= link_to 'Palabras con E', e_path %><br>
-  <%= link_to 'Palabras con I', i_path %><br>
-  <%= link_to 'Palabras con O', o_path %><br>
-  <%= link_to 'Palabras con U', u_path %><br><br>
+  <hr>
 
-  <%= link_to 'Práctica', azar_path %>
+  <h2>Escúchalas</h2>
+
+  <%= link_to vocales_path do %>
+    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+  <% end %>
+
+  <hr>
+
+  <h2>Palabras con...</h2>
+
+  <%= link_to a_path do %>
+    <span class="smaller-vowel-circle">A</span>
+  <% end %>
+
+  &nbsp
+
+  <%= link_to e_path do %>
+    <span class="smaller-vowel-circle">E</span>
+  <% end %>
+
+  &nbsp
+
+  <%= link_to i_path do %>
+    <span class="smaller-vowel-circle">I</span>
+  <% end %>
+
+  &nbsp
+
+  <%= link_to o_path do %>
+    <span class="smaller-vowel-circle">O</span>
+  <% end %>
+
+  &nbsp
+
+  <%= link_to u_path do %>
+    <span class="smaller-vowel-circle">U</span>
+  <% end %>
+
+  <br><br>
+
+  <hr>
+
+  <h2>Práctica</h2>
+
+  <%= link_to azar_path do %>
+    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+  <% end %>
 </div>
