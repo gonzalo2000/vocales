@@ -1,6 +1,9 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <div class="text-center">
 
+    <!-- hero links @word.sound to autoplay -->
+    <%= audio_tag("test.mp3", autoplay: true) %>
+    
     <!-- circled vowel plays sound -->
     <%= audio_tag "e.mp3", class: "audio-play" %>
     <%= link_to '#', id: 'audioButtonE' do %>
