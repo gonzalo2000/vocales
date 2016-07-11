@@ -76,3 +76,11 @@ $("#azarButton").on("click", function() {
     return audio.play();
   });
 });
+
+jQuery(document).ready(function() {
+$("#vowelButton").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});

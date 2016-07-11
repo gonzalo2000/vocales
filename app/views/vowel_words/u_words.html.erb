@@ -1,8 +1,5 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <div class="text-center">
-
-    <!-- hero links @word.sound to autoplay -->
-    <%= audio_tag("test.mp3", autoplay: true) %>
     
     <!-- circled vowel plays sound -->
     <%= audio_tag "u.mp3", class: "audio-play" %>
@@ -12,7 +9,10 @@
 
     <br><br>
 
-    <%= image_tag(@random_u.image, class: 'img-responsive') %>
+    <%= audio_tag @random_u.sound %>
+    <%= link_to '#', id: 'vowelButton' do %>
+      <%= image_tag(@random_u.image, class: 'img-responsive') %>
+    <% end %>
 
     <br><br>
 
