@@ -68,3 +68,11 @@ $(".audio-button").on("click", function() {
     return $(".audio-play")[0].play();
   });
 });
+
+jQuery(document).ready(function() {
+$("#azarButton").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});

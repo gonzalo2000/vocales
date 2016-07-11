@@ -1,19 +1,15 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <div class="text-center">
 
-    <!-- hero links @word.sound to autoplay -->
-    <%= audio_tag("test.mp3", autoplay: true) %>
+    <%= audio_tag(@word.sound, autoplay: true) %>
     
-    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-
-    <br><br>
+    <%= link_to '#', id: 'azarButton' do %>
+      <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      <br><br>
 
     <%= image_tag(@word.image, class: 'img-responsive') %>
-
-    <br><br>
-
-    <mark><%= @word.term %></mark>
-
+    <% end %>
+    
     <br><br><br>
 
     <!-- button display logic -->
