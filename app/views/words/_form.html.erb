@@ -1,5 +1,8 @@
 <%= simple_form_for @word do |f| %>
-  <%= f.input :term, label: "Palabra" %><br>
+  <%= f.input :term, label: "Palabra" %>
+  <br>
+  <%= f.input :image, label: "Imagen", input_html: { accept: "image/gif, image/jpeg, image/jpg, image/png" } %>
+  <br>
   <%= f.submit 'OK', class: "btn btn-primary" %>
 <% end %>
 
