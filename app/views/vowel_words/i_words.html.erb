@@ -1,6 +1,11 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <div class="text-center">
-    <span class="vowel-circle">I</span>
+    
+    <!-- circled vowel plays sound -->
+    <%= audio_tag "i.mp3", class: "audio-play" %>
+    <%= link_to '#', id: 'audioButtonI' do %>
+      <span class="vowel-circle">I</span>
+    <% end %>
 
     <br><br><br>
 

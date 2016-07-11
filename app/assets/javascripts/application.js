@@ -55,6 +55,14 @@ $("#audioButtonU").on("click", function() {
 });
 
 jQuery(document).ready(function() {
+$("#vowelButtonA").on("click", function() {
+    var audio = $(this).prev()[0];
+    audio.currentTime = 0;
+    return audio.play();
+  });
+});
+
+jQuery(document).ready(function() {
 $(".audio-button").on("click", function() {
     $(".audio-play")[0].currentTime = 0;
     return $(".audio-play")[0].play();
