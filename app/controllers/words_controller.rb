@@ -44,7 +44,7 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:word).permit(:term, :image)
+    params.require(:word).permit(:term, :image, :sound)
   end
 
   def confirm_admin_status

@@ -3,6 +3,8 @@
   <br>
   <%= f.input :image, label: "Imagen", input_html: { accept: "image/gif, image/jpeg, image/jpg, image/png" } %>
   <br>
+  <%= f.input :sound, label: "Sonido", input_html: { accept: "audio/mp3, audio/wma, audio/wav, audio/ra, audio/ram, audio/rm, audio/mid, audio/ogg, audio/aac, audio/aif, audio/iff, audio/m3u, audio/m4a, audio/mpa" } %>
+  <br>
   <%= f.submit 'OK', class: "btn btn-primary" %>
 <% end %>
 
