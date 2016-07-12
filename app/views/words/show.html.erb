@@ -4,20 +4,36 @@
     <%= audio_tag(@word.sound, autoplay: true) %>
     
     <!-- determine vowel to play -->
-    <% if @word.term[0] == 'a' %>
+    <% if @word.term[0] == 'a' || @word.term[0] == 'á' %>
       <%= audio_tag "a.mp3", class: "audio-play" %>
-    <% elsif @word.term[0] == 'e' %>
+    <% elsif @word.term[0] == 'e' || @word.term[0] == 'é' %>
       <%= audio_tag "e.mp3", class: "audio-play" %>
-    <% elsif @word.term[0] == 'i' %>
+    <% elsif @word.term[0] == 'i' || @word.term[0] == 'Í' %>
       <%= audio_tag "i.mp3", class: "audio-play" %>
-    <% elsif @word.term[0] == 'o' %>
+    <% elsif @word.term[0] == 'o' || @word.term[0] == 'ó' %>
       <%= audio_tag "o.mp3", class: "audio-play" %>
-    <% elsif @word.term[0] == 'u' %>
+    <% elsif @word.term[0] == 'u' || @word.term[0] == 'ú' %>
       <%= audio_tag "u.mp3", class: "audio-play" %>
     <% end %>
 
     <%= link_to '#', id: 'vowelButton' do %>
-      <span class="vowel-circle"><%= @word.term[0].upcase %></span>
+      <span class="vowel-circle">
+        <% if @word.term[0] == 'á' %>
+          A
+        <% elsif @word.term[0] == 'é' %>
+          E
+        <% elsif @word.term[0] == 'í' %>
+          I
+        <% elsif @word.term[0] == 'ó' %>
+          O
+        <% elsif @word.term[0] == 'ú' %>
+          U
+        <% else %>
+          <%= @word.term[0].upcase %>
+        <% end %>
+
+      </span>
+      <div class="clear"></div>
     <% end %>
 
     <br><br>
