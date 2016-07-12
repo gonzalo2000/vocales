@@ -13,7 +13,7 @@
 
     <!-- button display logic -->
     <%= audio_tag "error.mp3", class: "audio-play" %>
-    <% if @word.term[0] == "a" || @word.term[0] == "á" %>
+    <% if @word.term[0] == "a" || @word.term[0] == "á" || @word.term[0] == "A" || @word.term[0] == "Á" %>
       <%= link_to 'A', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">A</button>
@@ -21,7 +21,7 @@
 
     &nbsp
 
-    <% if @word.term[0] == "e" || @word.term[0] == "é" %>
+    <% if @word.term[0] == "e" || @word.term[0] == "é" || @word.term[0] == "E" || @word.term[0] == "É" %>
       <%= link_to 'E', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">E</button>
@@ -29,7 +29,7 @@
 
     &nbsp
 
-    <% if @word.term[0] == "i" || @word.term[0] == "í" %>
+    <% if @word.term[0] == "i" || @word.term[0] == "í" || @word.term[0] == "I" || @word.term[0] == "Í" %>
       <%= link_to 'I', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">I</button>
@@ -37,7 +37,7 @@
 
     &nbsp
 
-    <% if @word.term[0] == "o" || @word.term[0] == "ó" %>
+    <% if @word.term[0] == "o" || @word.term[0] == "ó" || @word.term[0] == "O" || @word.term[0] == "Ó" %>
       <%= link_to 'O', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">O</button>
@@ -45,7 +45,7 @@
 
     &nbsp
 
-    <% if @word.term[0] == "u" || @word.term[0] == "ú" %>
+    <% if @word.term[0] == "u" || @word.term[0] == "ú" || @word.term[0] == "U" || @word.term[0] == "Ú" %>
       <%= link_to 'U', azar_path, class: 'btn btn-success btn-lg' %>
     <% else %>
       <button type="button" class="btn btn-success btn-lg audio-button">U</button>
