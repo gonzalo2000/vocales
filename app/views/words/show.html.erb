@@ -1,0 +1,46 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <div class="text-center">
+
+    <%= audio_tag(@word.sound, autoplay: true) %>
+    
+    <!-- determine vowel to play -->
+    <% if @word.term[0] == 'a' %>
+      <%= audio_tag "a.mp3", class: "audio-play" %>
+    <% elsif @word.term[0] == 'e' %>
+      <%= audio_tag "e.mp3", class: "audio-play" %>
+    <% elsif @word.term[0] == 'i' %>
+      <%= audio_tag "i.mp3", class: "audio-play" %>
+    <% elsif @word.term[0] == 'o' %>
+      <%= audio_tag "o.mp3", class: "audio-play" %>
+    <% elsif @word.term[0] == 'u' %>
+      <%= audio_tag "u.mp3", class: "audio-play" %>
+    <% end %>
+
+    <%= link_to '#', id: 'vowelButton' do %>
+      <span class="vowel-circle"><%= @word.term[0].upcase %></span>
+    <% end %>
+
+    <br><br>
+
+    <%= audio_tag @word.sound %>
+    <%= link_to '#', id: 'azarButton' do %>
+      <%= image_tag(@word.image, class: 'img-responsive') %>
+    <% end %>
+    
+    <br><br>
+
+    <mark><%= @word.term %></mark>
+
+    <br><br><br>
+
+    <%= link_to words_path do %>
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    <% end %>
+
+    &nbsp &nbsp &nbsp &nbsp
+
+    <%= link_to root_path do %>
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    <% end %>
+  </div>
+</div>

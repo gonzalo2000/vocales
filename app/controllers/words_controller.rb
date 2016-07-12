@@ -6,6 +6,10 @@ class WordsController < ApplicationController
     @words = Word.order('term')
   end
 
+  def show
+    @word = Word.find(params[:id])
+  end
+
   def new
     @word = Word.new
   end

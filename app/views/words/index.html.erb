@@ -8,8 +8,11 @@
   <ul>
   <% @words.each do |word| %>
     <li>
-      <%= image_tag word.image_url(:thumb) if word.image? %> &nbsp
-      <%= word.term %> &nbsp
+      <%= link_to word_path(word) do %>
+        <%= image_tag word.image_url(:thumb) if word.image? %> &nbsp
+        <%= word.term %> &nbsp
+      <% end %>
+
       <% if current_user.try(:admin?) %>
         <br>
         <%= link_to 'Modificar', edit_word_path(word) %> &nbsp
@@ -27,12 +30,13 @@
     <%= link_to "Agregar Palabra", new_word_path, class: 'btn btn-primary' %><br><br>
   <% end %>
   
+  <br><br>
+
   <div class="text-center">
     <%= link_to root_path do %>
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
     <% end %>
   </div>
-  
 
 </div>
 
