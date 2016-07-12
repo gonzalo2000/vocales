@@ -5,29 +5,35 @@
   
   <br>
 
-  <ul>
   <% @words.each do |word| %>
-    <li>
-      <%= link_to word_path(word) do %>
-        <%= image_tag word.image_url(:thumb) if word.image? %> &nbsp
-        <%= word.term %> &nbsp
-      <% end %>
+    <%= link_to word_path(word) do %>
+      <div class="col-sm-1">
+        <%= image_tag word.image_url(:thumb) if word.image? %>
+      </div>
+      <div class="col-sm-1">
+        <%= word.term %> 
+      </div>
+    <% end %>
 
-      <% if current_user.try(:admin?) %>
-        <br>
-        <%= link_to 'Modificar', edit_word_path(word) %> &nbsp
-        <%= link_to 'Eliminar', word_path(word), 
-            method: :delete, 
-            data: { confirm: '¿Estás seguro que quieres eliminar esta entrada? La imagen y audio no van a poder ser recuperados después.'} %>
-      <% end %>
-    </li>
-    <br>
+    <% if current_user.try(:admin?) %>
+      <div class="col-sm-1">
+        <%= link_to 'Modificar', edit_word_path(word), class: 'btn btn-primary' %>
+      </div> 
+      <div class="col-sm-1">
+        <%= link_to 'Eliminar', word_path(word), class: 'btn btn-danger',
+          method: :delete, 
+          data: { confirm: '¿Estás seguro que quieres eliminar esta entrada? La imagen y audio no van a poder ser recuperados después.'} %>
+      </div>
+    <% end %>
+    
+    <div class="clear"></div>
+    <br><br>
   <% end %>
-  </ul>
+  
 
   <% if current_user.try(:admin?) %>
     <br>
-    <%= link_to "Agregar Palabra", new_word_path, class: 'btn btn-primary' %><br><br>
+    <%= link_to "Agregar Palabra", new_word_path, class: 'btn btn-success' %><br><br>
   <% end %>
   
   <br><br>
