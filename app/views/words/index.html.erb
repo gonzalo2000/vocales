@@ -1,19 +1,24 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1>Vocabulario</h1>
 
-  <p>Este es un listado de todas las palabras usadas en esta aplicación:</p>
+  <p>Este es un listado de las <%= Word.count %> palabras usadas en esta aplicación:</p>
   
+  <br>
+
   <ul>
   <% @words.each do |word| %>
     <li>
+      <%= image_tag word.image_url(:thumb) if word.image? %> &nbsp
       <%= word.term %> &nbsp
       <% if current_user.try(:admin?) %>
+        <br>
         <%= link_to 'Modificar', edit_word_path(word) %> &nbsp
         <%= link_to 'Eliminar', word_path(word), 
             method: :delete, 
             data: { confirm: '¿Estás seguro que quieres eliminar esta entrada? La imagen y audio no van a poder ser recuperados después.'} %>
       <% end %>
     </li>
+    <br>
   <% end %>
   </ul>
 
